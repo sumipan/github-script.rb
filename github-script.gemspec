@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'nanika/version'
+require 'github/script/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "nanika"
-  spec.version       = Nanika::VERSION
+  spec.name          = "github-script"
+  spec.version       = Github::Script::VERSION
   spec.authors       = ["takashi nagayasu"]
   spec.email         = ["regist@g-onion.org"]
   spec.summary       = %q{TODO: Write a short summary. Required.}
