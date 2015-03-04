@@ -1,13 +1,13 @@
 # Github::Script
 
-TODO: Write a gem description
+Bridge to run the script from github of issue
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'github-script'
+gem 'github-script', :git => 'git@github.com:sumipan/github-script.rb.git', :branch => 'master'
 ```
 
 And then execute:
@@ -17,15 +17,3 @@ And then execute:
 Or install it yourself as:
 
     $ gem install github-script
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it ( https://github.com/[my-github-username]/github-script/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
