@@ -15,8 +15,15 @@ module Github
     end
     
     def serve(text, &block)
-      eval text, TOPLEVEL_BINDING
-      self.instance_eval &block if block_given?
+      text.untaint
+
+      thread = Thread.new {
+        $SAFE = 3
+        eval text, TOPLEVEL_BINDING
+        self.instance_eval &block if block_given?
+      }
+
+      thread.join
     end
 
     def scan(text)
