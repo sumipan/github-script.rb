@@ -7,9 +7,9 @@ Gem::Specification.new do |spec|
   spec.name          = "github-script"
   spec.version       = Github::Script::VERSION
   spec.authors       = ["takashi nagayasu"]
-  spec.email         = ["regist@g-onion.org"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.email         = ["example@example.org"]
+  spec.summary       = %q{Github script}
+  spec.description   = %q{Github script}
   spec.homepage      = ""
   spec.license       = "MIT"
 
