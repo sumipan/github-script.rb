@@ -7,18 +7,18 @@ module Github
       @github = Github::Client.new
       yield @github
     end
-    
+
     def discover(number)
       raise "error. text is null" unless number
       text = @github.issues.get(:number => number).body.body
       scan(text)
     end
-    
+
     def serve(text, &block)
       text.untaint
 
       thread = Thread.new {
-        $SAFE = 3
+        $SAFE = 1
         eval text, TOPLEVEL_BINDING
         self.instance_eval &block if block_given?
       }
@@ -32,9 +32,9 @@ module Github
 
       text.each_line do |line|
         if  line.match(/^```script/) then
-          inside = true 
+          inside = true
         elsif line.match(/^```/) then
-          inside = false 
+          inside = false
         elsif inside then
           script += line
         elsif match = line.match(/#(\d+)/) then
@@ -45,7 +45,7 @@ module Github
 
       script
     end
-    
+
     module_function :configure, :discover, :serve, :scan
   end
 end
