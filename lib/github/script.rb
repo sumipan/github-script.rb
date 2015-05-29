@@ -18,7 +18,7 @@ module Github
       text.untaint
 
       thread = Thread.new {
-        $SAFE = 1
+        $SAFE = 0
         eval text, TOPLEVEL_BINDING
         self.instance_eval &block if block_given?
       }
